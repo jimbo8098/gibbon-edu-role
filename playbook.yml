@@ -1,0 +1,27 @@
+- hosts: all
+  vars:
+    db_user: gibbon
+    db_pass: gibbon
+    db_host: localhost
+    db_tablename: gibbon
+  tasks:
+    - name: Add PHP repo
+      apt_repository:
+        repo: http//ppa.launchpad.net/ondrej/php/ubuntu
+      become: yes
+    - name: Update apt
+      apt:
+        update: yes
+    - name: Install apache
+      package:
+        name: "{{ item }}"
+      loop:
+        - httpd
+        - php7.3
+      become: yes
+    - name: Install mysql if used on localhost
+      package:
+        name: mysqld
+      when: "{{ db_host }} == 'localhost'"
+    - name: Structure apache config
+
