@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+  options:
+    requirements-file: ./requirements.yml
+    role-file: ./requirements.yml
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: docker.io/pycontribs/ubuntu
+    pre_build_image: true
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      all:
+        vars:
+          php_version: '7.8'
+          db_user: gibbon
+          db_pass: gibbon
+          db_host: localhost
+          db_tablename: gibbon
+verifier:
+  name: ansible

@@ -1,0 +1,21 @@
+---
+# tasks file for gibbon-edu
+  - import_role: 
+      name: geerlingguy.apache
+    become: yes
+      
+  - import_role: 
+      name: geerlingguy.php
+    become: yes
+
+  - import_role: 
+      name: geerlingguy.mysql
+    become: yes
+
+  - import_role: 
+      name: geerlingguy.php-versions
+    become: yes
+
+  - import_role: 
+      name: geerlingguy.php-mysql
+    become: yes

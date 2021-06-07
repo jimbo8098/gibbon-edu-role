@@ -1,0 +1,18 @@
+---
+all:
+  vars:
+    php_version: '7.8'
+    db_user: gibbon
+    db_pass: gibbon
+    db_host: localhost
+    db_tablename: gibbon
+
+  hosts:
+    prod:
+      ansible_host: gibbon.tootactical.uk
+      ansible_user: devops
+    dev:
+      ansible_connection: docker
+      ansible_host: focal
+      ansible_user: root
+      

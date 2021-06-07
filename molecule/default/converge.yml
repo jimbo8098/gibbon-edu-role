@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include gibbon-edu"
+      include_role:
+        name: "gibbon-edu"

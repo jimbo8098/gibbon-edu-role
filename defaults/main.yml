@@ -1,0 +1,14 @@
+---
+# defaults file for gibbon-edu
+mysql_root_username: root
+mysql_root_password: r6eh8h8DPQ8uVQj
+mysql_user_username: gibbon
+mysql_user_password: df7HfYH3HvAZY6c
+gibbon_tablename: gibbon
+mysql_enabled_on_startup: true
+mysql_databases: 
+  - '{{ db_tablename }}'
+
+php_version: 7.8
+
+apache_remove_default_vhost: true
